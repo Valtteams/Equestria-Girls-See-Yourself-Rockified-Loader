@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Languaje Select - See Yourself Rockified</title>
+    <link rel="icon" href="./twi.ico" type="image/x-icon">
+    <style>
+        @font-face {
+            font-family: 'Stovetop';
+            src: url('./stovetop.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        body {
+            font-family: 'Stovetop', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-image: url('./title.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-color: #0d1b2a; 
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .launcher-card {
+            background: rgba(13, 27, 42, 0.85);
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(5px);
+            border: 2px solid #00b4d8;
+            text-align: center;
+            max-width: 400px;
+            width: 100%;
+        }
+        h1 {
+            font-family: 'Stovetop', sans-serif;
+            font-size: 32px;
+            margin-bottom: 25px;
+            text-shadow: 0px 2px 4px rgba(0,0,0,0.8);
+            letter-spacing: 1px;
+            color: #caf0f8; 
+        }
+        select {
+            width: 100%;
+            padding: 12px;
+            font-size: 16px;
+            border-radius: 8px;
+            border: 2px solid #0077b6;
+            background-color: white;
+            color: #333;
+            font-weight: bold;
+            margin-bottom: 25px;
+            cursor: pointer;
+            outline: none;
+        }
+        select option {
+            font-family: 'Segoe UI', sans-serif;
+            font-weight: normal;
+        }
+        button {
+            font-family: 'Stovetop', sans-serif;
+            width: 100%;
+            padding: 12px;
+            font-size: 20px; 
+            font-weight: bold;
+            color: white;
+            background-color: #0077b6;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background 0.2s ease, transform 0.1s ease;
+            box-shadow: 0 4px 15px rgba(0, 119, 182, 0.4);
+            letter-spacing: 1px;
+        }
+        button:hover {
+            background-color: #0096c7;
+            transform: scale(1.02);
+        }
+        button:active {
+            transform: scale(0.98);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="launcher-card">
+        <h1>Languaje Select</h1>
+        
+        <select id="game-lang">
+            <option value="de_DE">Deutsch (Deutschland)</option>
+            <option value="en_AU">English (Australia)</option>
+            <option value="en_CA">English (Canada)</option>
+            <option value="en_GB">English (United Kingdom)</option>
+            <option value="en_US" selected>English (United States)</option>
+            <option value="es_CL">Español (Chile)</option>
+            <option value="es_CO">Español (Colombia)</option>
+            <option value="es_ES">Español (España)</option>
+            <option value="es_MX">Español (México)</option>
+            <option value="es_PE">Español (Perú)</option>
+            <option value="fr_CA">Français (Canada)</option>
+            <option value="fr_FR">Français (France)</option>
+            <option value="it_IT">Italiano (Italia)</option>
+            <option value="nl_NL">Nederlands (Nederland)</option>
+            <option value="no_NO">Norsk (Norge)</option>
+            <option value="pl_PL">Polski (Polska)</option>
+            <option value="pt_BR">Português (Brasil)</option>
+            <option value="pt_PT">Português (Portugal)</option>
+            <option value="sv_SE">Svenska (Sverige)</option>
+            <option value="da_DK">Dansk (Danmark)</option>
+            <option value="fi_FI">Suomi (Suomi)</option>
+            <option value="el_GR">Ελληνικά (Ελλάδα)</option>
+            <option value="ru_RU">Русский (Россия)</option>
+        </select>
+
+        <button onclick="launchGame()">PLAY</button>
+    </div>
+
+    <script>
+        function launchGame() {
+            const selectedLang = document.getElementById('game-lang').value;
+            const baseUrl = "https://www.hasbro.com/common/assets/html5/EquestriaGirls/20140331_seeyourself_release/051214/index.html";
+            
+            window.location.href = `${baseUrl}?locale=${selectedLang}`;
+        }
+    </script>
+
+</body>
+</html>
